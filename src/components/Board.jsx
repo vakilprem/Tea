@@ -1,6 +1,5 @@
 import React from "react";
 import Column from "./Column";
-// import { DndContext } from '@dnd-kit/core';
 import { DndContext, PointerSensor, useSensor } from "@dnd-kit/core";
 import { useDispatch } from "react-redux";
 import { moveTask } from "../store/tasksSlice";
@@ -25,7 +24,7 @@ export default function Board() {
 
   return (
     <DndContext onDragEnd={handleDragEnd} sensors={[sensor]}>
-      <div className="flex gap-4 justify-center">
+      <div className="flex gap-4">
         {columns.map((col) => (
           <Column key={col.id} status={col.id} title={col.title} />
         ))}
